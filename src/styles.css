@@ -1,0 +1,288 @@
+:root {
+  --sidebar-padding: 20px;
+  --sidebar-width: 250px;
+  --sidebar-background-color: #fcf6f5;
+  --sidebar-hover-color: #dc3e227a;
+  --sidebar-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+  --button-color: #ff5722;
+  --sidebar-text-color: #333;
+  --delete-button-color: #ed0800;
+  --delete-button-hover-color: darkred;
+  --edit-button-color: #33b249;
+  --edit-button-hover-color: darkgreen;
+  --second-column-color: #ff5722;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-background-color);
+  padding: var(--sidebar-padding);
+  box-shadow: var(--sidebar-box-shadow);
+}
+
+.add-project {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-project:hover {
+  background-color: #ff7043;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu > li,
+.project-list > li {
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  max-height: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: var(--sidebar-text-color);
+}
+
+.menu > li:hover,
+.project-list > li:hover {
+  background-color: var(--sidebar-hover-color);
+}
+
+.side-item-name-icon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.side-item-name-icon > img {
+  max-height: 25px;
+  margin-right: 5px;
+}
+
+.side-item-name-icon > p {
+  flex: 1;
+}
+
+.badge {
+  background-color: var(--button-color);
+  color: white;
+  padding: 3px 7px;
+  border-radius: 12px;
+}
+
+.main-content {
+  width: 50%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+
+.main-content h2 {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+#todo-list {
+  width: 100%;
+  text-align: left;
+}
+
+.main-content th,
+.main-content td {
+  border-top: 1px solid rgb(193, 190, 190);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead > tr {
+  color: #686767;
+  font-size: 1.2rem;
+}
+
+thead > tr > td:not(:last-child),
+tbody > tr > td:not(:last-child) {
+  border-right: 1px solid rgb(193, 190, 190);
+}
+
+thead > tr > td:not(:first-child) {
+  padding: 10px;
+}
+
+tbody > tr > td {
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.task-title > th {
+  font-size: 1.3rem;
+  padding: 20px 0;
+}
+
+.main-content tr:nth-child(even) {
+  background-color: var(--sidebar-background-color);
+}
+
+tbody td:nth-child(2) {
+  color: var(--second-column-color);
+}
+
+.edit-delete-button-container {
+  display: flex;
+
+}
+
+.edit-delete-button-container > button {
+  width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: var(--delete-button-color);
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.delete:hover {
+  background-color: var(--delete-button-hover-color);
+}
+
+.edit {
+  background-color: var(--edit-button-color);
+  transition: background-color 0.3s ease;
+  color: white;
+  margin-right: 5px;
+}
+
+.edit:hover {
+  background-color: var(--edit-button-hover-color);
+}
+
+/* Dialog Style*/
+dialog {
+  background-color: var(--sidebar-background-color);
+  border-radius: 10px;
+  padding: 0 1em;
+  padding-bottom: 1em;
+  color: var(--sidebar-text-color);
+  font-size: 1.5rem;
+  position: relative;
+  width: 400px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cancel-btn, .confirm-submission {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.cancel-btn {
+  background-color: var(--delete-button-color);
+}
+
+.cancel-btn:hover {
+  background-color: var(--delete-button-hover-color);
+}
+
+.confirm-submission {
+  background-color: var(--edit-button-color);
+}
+
+.confirm-submission:hover {
+  background-color: var(--edit-button-hover-color);
+}
+
+.modal h3 {
+  text-align: center;
+}
+
+.close-btn {
+  position: relative;
+  margin-left: 100%;
+  cursor: pointer;
+}
+
+/* Add task button*/
+
+.add-item-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--button-color);
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-item-button:hover {
+  background-color: rgb(196, 82, 6);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.add-item-button:focus {
+  outline: none;
+}

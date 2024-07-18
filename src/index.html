@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <button class="add-project">+ Add Project</button>
+        <ul class="menu">
+          <li>
+            <div class="side-item-name-icon">
+              <img src="<%= require('./img/calendar-today.svg') %>" alt="I" />
+              <p>Today</p>
+            </div>
+            <span class="badge">11</span>
+          </li>
+          <li>
+            <div class="side-item-name-icon">
+              <img src="<%= require('./img/calendar-month-outline.svg') %>" alt="I" />
+              <p>Upcoming</p>
+            </div>
+            <span class="badge">9</span>
+          </li>
+        </ul>
+        <div class="projects">
+          <h3>My Projects</h3>
+          <ul class="project-list">
+            <li>
+              <div class="side-item-name-icon">
+                <img src="./img/pound.svg" alt="I" />
+                <p>Home</p>
+              </div>
+              <span class="badge">2</span>
+            </li>
+            <li>
+              <div class="side-item-name-icon">
+                <img src="./img/pound.svg" alt="I" />
+                <p>Today</p>
+              </div>
+              <span class="badge">1</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main class="main-content">
+        <h2 class="project-title">Home</h2>
+        <table id="todo-list">
+          <thead>
+            <tr>
+              <td>Task name</td>
+              <td>Due Date</td>
+              <td>Priority</td>
+              <td>Actions</td>
+            </tr>
+          </thead>
+          <tbody class="todo-list-body">
+
+            <!-- Task List -->
+            <tr class="task-title">
+              <th colspan="4">Website redesign</th>
+            </tr>
+            <tr>
+              <td>Buy Groceries</td>
+              <td>2020-12-12</td>
+              <td>High</td>
+              <td class="edit-delete-button-container">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+            <!-- Task List -->
+            
+
+
+            <tr class="task-title">
+              <th colspan="4">Website redesign</th>
+            </tr>
+            <tr>
+              <td>Buy Groceries</td>
+              <td>2020-12-12</td>
+              <td>High</td>
+              <td class="edit-delete-button-container">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+
+            <tr class="task-title">
+              <th colspan="4">Website redesign</th>
+            </tr>
+            <tr>
+              <td>Buy Groceries</td>
+              <td>2020-12-12</td>
+              <td>High</td>
+              <td class="edit-delete-button-container">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+
+            <tr class="task-title">
+              <th colspan="4">Website redesign</th>
+            </tr>
+            <tr>
+              <td>Buy Groceries</td>
+              <td>2020-12-12</td>
+              <td>High</td>
+              <td class="edit-delete-button-container">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+
+            <tr class="task-title">
+              <th colspan="4">Website redesign</th>
+            </tr>
+            <tr>
+              <td>Buy Groceries</td>
+              <td>2020-12-12</td>
+              <td>High</td>
+              <td class="edit-delete-button-container">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Modal -->
+        <dialog class="modal">
+          <span class="close-btn" autofocus>&times;</span>
+          <h3>Add Project</h3>
+          <form id="project-form">
+            <div>
+              <label for="title">Project Name:</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                pattern="^[^0-9]+$"
+                placeholder="Project Name ex. School Assignment"
+                maxlength="25"
+                required
+              />
+            </div>
+
+              <div>
+                <button type="submit" class="confirm-submission">Add</button>
+                <button class="cancel-btn">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </dialog>
+      </main>
+      <button class="add-item-button">+</button>
+    </div>
+  </body>
+</html>
