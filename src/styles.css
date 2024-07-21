@@ -11,6 +11,7 @@
   --edit-button-color: #33b249;
   --edit-button-hover-color: darkgreen;
   --second-column-color: #ff5722;
+  --shepherd-background-color: #f0e7e6;
 }
 
 html {
@@ -163,7 +164,6 @@ tbody td:nth-child(2) {
 
 .edit-delete-button-container {
   display: flex;
-
 }
 
 .edit-delete-button-container > button {
@@ -199,12 +199,9 @@ tbody td:nth-child(2) {
 dialog {
   background-color: var(--sidebar-background-color);
   border-radius: 10px;
-  padding: 0 1em;
-  padding-bottom: 1em;
   color: var(--sidebar-text-color);
   font-size: 1.5rem;
-  position: relative;
-  width: 400px;
+  min-width: 400px;
   margin: auto;
 }
 
@@ -214,7 +211,16 @@ label {
   font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="date"] {
+  width: 390px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#priority {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -222,7 +228,10 @@ input[type="text"] {
   border-radius: 4px;
 }
 
-.cancel-btn, .confirm-submission {
+.project-cancel-btn,
+.task-cancel-btn,
+.confirm-submission,
+.confirm-submission-task {
   margin-top: 10px;
   padding: 10px 20px;
   border: none;
@@ -230,19 +239,18 @@ input[type="text"] {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-right: 10px;
   width: 100%;
 }
 
-.cancel-btn {
+.project-cancel-btn, .task-cancel-btn {
   background-color: var(--delete-button-color);
 }
 
-.cancel-btn:hover {
+.project-cancel-btn:hover, .task-cancel-btn:hover {
   background-color: var(--delete-button-hover-color);
 }
 
-.confirm-submission {
+.confirm-submission, .confirm-submission-task {
   background-color: var(--edit-button-color);
 }
 
@@ -254,7 +262,7 @@ input[type="text"] {
   text-align: center;
 }
 
-.close-btn {
+.close-btn, .task-close-btn {
   position: relative;
   margin-left: 100%;
   cursor: pointer;
@@ -285,4 +293,54 @@ input[type="text"] {
 
 .add-item-button:focus {
   outline: none;
+}
+
+.tab.active {
+  background-color: var(--sidebar-hover-color);
+  color: white;
+  border-color: #007bff;
+}
+
+.remove-project-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--delete-button-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 80%;
+}
+
+
+/* Shepherd Tour Styles */
+.shepherd-header {
+  background-color: var(--button-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+.shepherd-arrow:before {
+  background-color: var(--shepherd-background-color);
+
+}
+
+.shadow-md {
+  width: 300px;
+  background-color: var(--shepherd-background-color);
+}
+
+.shepherd-text {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.shepherd-button {
+  background-color: var(--button-color);
+
 }

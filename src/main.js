@@ -1,25 +1,26 @@
-import { taskDom, projectDOM, showAndCloseModal, closeModal } from "./dom";
-import { createProject, projectLibrary } from "./project";
+import { showAndCloseModal } from "./domUtils";
+import {
+  makeProjectEvent,
+  addTaskEvent,
+  loadUpcomingTask,
+  loadTodayTasks,
+  removeProjectEvent,
+} from "./events";
+import { restoreLocal, selectUpcomingTasks } from "./project";
+import { startTutorial } from "./firstTimeInstructions";
 import "./styles.css";
 
 document.addEventListener("DOMContentLoaded", () => {
+  restoreLocal();
   showAndCloseModal();
-});
+  makeProjectEvent();
+  addTaskEvent();
+  loadUpcomingTask();
+  loadTodayTasks();
+  removeProjectEvent();
+  selectUpcomingTasks();
 
-const addProjectButton = document.querySelector(".confirm-submission");
-
-addProjectButton.addEventListener("click", (event) => {
-  const form = document.querySelector("#project-form");
-
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
+  if (!localStorage.getItem("tutorialCompleted")) {
+    startTutorial();
   }
-
-  event.preventDefault();
-
-  const projectName = document.querySelector("#title").value;
-  const project = createProject(projectName);
-  projectDOM(projectName, project.numTask);
-  closeModal();
 });
