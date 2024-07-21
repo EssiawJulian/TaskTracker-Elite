@@ -211,8 +211,7 @@ label {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="date"] {
+#title, #task-title, #task-name, #date {
   width: 390px;
   padding: 8px;
   margin-bottom: 10px;
